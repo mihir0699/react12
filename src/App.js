@@ -13,11 +13,11 @@ import PrivateRoutes from './components/privateRoutes';
 function App() {
   return (
     <AuthState>
-    <Router>
+    <Router basename={window.location.pathname || ''}>
       <Switch>
-        <Route exact path = '/react12/' component={login} />
-        <PrivateRoutes exact path ='/react12/user' component = {user} />
-        <PrivateRoutes exact path ='/react12/admin' component = {admin} />
+        <Route exact path = '/' component={login} />
+        <PrivateRoutes exact path ='/user' component = {user} />
+        <PrivateRoutes exact path ='/admin' component = {admin} />
       </Switch>
     </Router>
     </AuthState>
